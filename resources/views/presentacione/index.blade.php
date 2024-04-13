@@ -13,10 +13,10 @@
 @include('layouts.partials.alert')
 
 <div class="container-fluid px-4">
-    <h1 class="mt-4 text-center">Presentaciones</h1>
+    <h1 class="mt-4 text-center">Modulos</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="{{ route('panel') }}">Inicio</a></li>
-        <li class="breadcrumb-item active">Presentaciones</li>
+        <li class="breadcrumb-item active">Modulos</li>
     </ol>
 
     @can('crear-presentacione')
@@ -30,7 +30,7 @@
     <div class="card">
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
-            Tabla presentaciones
+            Tabla modulos
         </div>
         <div class="card-body">
             <table id="datatablesSimple" class="table table-striped fs-6">

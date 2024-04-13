@@ -222,7 +222,8 @@
 
 @push('js')
 <script>
-    //Variables
+
+    //Variables  que permiten calcular el igv
     let filasSubtotal = document.getElementsByClassName('td-subtotal');
     let cont = 0;
     let impuesto = $('#input-impuesto').val();

@@ -53,7 +53,7 @@
                     </nav>
                 </div--->
 
-                <div class="sb-sidenav-menu-heading">Modulos</div>
+                <div class="sb-sidenav-menu-heading">PAGINAS</div>
 
                 <!----Compras---->
                 @can('ver-compra')
@@ -103,7 +103,7 @@
                 @can('ver-presentacione')
                 <a class="nav-link" href="{{ route('presentaciones.index') }}">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-box-archive"></i></div>
-                    Presentaciones
+                    Modulos
                 </a>
                 @endcan
 

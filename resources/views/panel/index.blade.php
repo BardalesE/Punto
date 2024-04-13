@@ -136,7 +136,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-8">
-                            <i class="fa-solid fa-box-archive"></i><span class="m-1">Presentaciones</span>
+                            <i class="fa-solid fa-box-archive"></i><span class="m-1">Modulos</span>
                         </div>
                         <div class="col-4">
                             <?php

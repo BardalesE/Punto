@@ -88,8 +88,8 @@
 
                     <!---Presentaciones---->
                     <div class="col-md-6">
-                        <label for="presentacione_id" class="form-label">Presentación:</label>
-                        <select data-size="4" title="Seleccione una presentación" data-live-search="true" name="presentacione_id" id="presentacione_id" class="form-control selectpicker show-tick">
+                        <label for="presentacione_id" class="form-label">Modulo:</label>
+                        <select data-size="4" title="Seleccione un modulo" data-live-search="true" name="presentacione_id" id="presentacione_id" class="form-control selectpicker show-tick">
                             @foreach ($presentaciones as $item)
                             <option value="{{$item->id}}" {{ old('presentacione_id') == $item->id ? 'selected' : '' }}>{{$item->nombre}}</option>
                             @endforeach

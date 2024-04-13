@@ -46,6 +46,9 @@ Route::get('/login',[loginController::class,'index'])->name('login');
 Route::post('/login',[loginController::class,'login']);
 Route::get('/logout',[logoutController::class,'logout'])->name('logout');
 
+Route::get('/ventas/{venta}/imprimir', [VentaController::class, 'imprimir'])->name('ventas.imprimir');
+
+
 Route::get('/401', function () {
     return view('pages.401');
 });
@@ -55,3 +58,5 @@ Route::get('/404', function () {
 Route::get('/500', function () {
     return view('pages.500');
 });
+
+

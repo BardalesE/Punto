@@ -10,7 +10,7 @@ use App\Models\Venta;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Barryvdh\DomPDF\Facade\Pdf as PDF;
+
 
 
 
@@ -35,7 +35,6 @@ class ventaController extends Controller
 
         return view('venta.index',compact('ventas'));
     }
-
     /**
      * Show the form for creating a new resource.
      */
@@ -128,6 +127,11 @@ class ventaController extends Controller
         return view('venta.show',compact('venta'));
     }
 
+    public function report(Venta $venta)
+    {
+        return view('venta.report',compact('venta'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      */
@@ -155,18 +159,5 @@ class ventaController extends Controller
         ]);
 
         return redirect()->route('ventas.index')->with('success','Venta eliminada');
-    }
-
-    public function imprimir($ventaId)
-    {
-    // Obtén la venta por su ID
-    $venta = Venta::findOrFail($ventaId);
-
-    // Aquí puedes generar el PDF de la venta usando una biblioteca como Dompdf o mPDF
-    // Por ejemplo, si estás usando Dompdf:
-    $pdf = PDF::loadView('ventas.pdf', compact('venta'));
-    
-    // Devuelve el PDF como una descarga
-    return $pdf->download('venta_' . $venta->numero_comprobante . '.pdf');
     }
 }

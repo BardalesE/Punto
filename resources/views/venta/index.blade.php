@@ -73,7 +73,9 @@
                                     </div>
                                 </td>
                                 <td>
-                                    {{ $item->user->name }}
+                                    @if($item->user)
+                                        {{ $item->user->name }}
+                                    @endif
                                 </td>
                                 <td>
                                     {{ $item->total }}
@@ -90,15 +92,13 @@
                                             </form>
                                         @endcan
 
-
-                                        <div>
-                                            <a href="{{ route('ventas.imprimir', ['venta' => $item->id]) }}"
-                                                target="_blank" class="btn btn-success">
-                                                <i class="fas fa-file-pdf"></i> Imprimir
-                                            </a>
-                                        </div>
-
-
+                                        @can('mostrar-venta')
+                                            <form action="{{ route('ventas.report', ['venta' => $item]) }}" method="get">
+                                                <button type="submit" class="btn btn-success">
+                                                    Imprimir
+                                                </button>
+                                            </form>
+                                        @endcan
                                         <!-- Boton eliminar venta-->
                                         @can('eliminar-venta')
                                             <button type="button" class="btn btn-danger" data-bs-toggle="modal"
@@ -107,6 +107,7 @@
                                     </div>
                                 </td>
                             </tr>
+
 
                             <!-- Modal de confirmación-->
                             <div class="modal fade" id="confirmModal-{{ $item->id }}" tabindex="-1"

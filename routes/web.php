@@ -40,13 +40,20 @@ Route::resources([
     'users' => userController::class,
     'roles' => roleController::class,
     'profile' => profileController::class
+    
 ]);
 
 Route::get('/login',[loginController::class,'index'])->name('login');
 Route::post('/login',[loginController::class,'login']);
 Route::get('/logout',[logoutController::class,'logout'])->name('logout');
 
-Route::get('/ventas/{venta}/imprimir', [VentaController::class, 'imprimir'])->name('ventas.imprimir');
+
+Route::get('ventas/report',[ ventaController::class, 'report'])->name('ventas.report');
+
+
+
+
+
 
 
 Route::get('/401', function () {

@@ -35,7 +35,7 @@
             Tabla productos
         </div>
         <div class="card-body">
-            <table id="datatablesSimple" class="table table-striped fs-6">
+            <table id="datatablesSimple" class="table table-striped fs-8">
                 <thead>
                     <tr>
                         <th>Código</th>
